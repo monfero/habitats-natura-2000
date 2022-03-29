@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <title>Index de concellos</title>
+</head>
+<body>
+    <div class=”container”>
+        <div class=”row”>
+            <div class=”col-md-12">
+
+
+                <h1>Listaxe de hábitats NATURA 2000</h1>
+
+                <h2>Que é isto da Listaxe Hábitats Natura2000?</h2>
+                <p>É unha listaxe dos hábitats do Plan Director RN2000 de Galicia que están afectados ou amenazados por
+                infraestruturas eólicas. Podes atopar a información por concellos.</p>
+        
+                <ul>
+                    <li>23.242 hábitats #Natura2000 de Galicia dentro de poligonais industriais.</li>
+                    <li>5.322 hábitats #Natura2000 de Galicia con aeroxeradores dentro.</li>
+                    <li>1.823 parcelas de hábitats #Natura2000 de Galicia afectadas por liñas de Alta Tensión.</li></ul>
+                <h2>Qué son os hábitats da Natura2000 e por qué son tan importantes?</h2>
+                <p>Porque os habitats están protexidos pola Directiva 92/43/CEE, relativa a la Conservación de Hábitats
+                Naturales y de la Fauna y Flora Silvestre. Art 2 y 6.</p>
+                <h2>Para qué podemos usar esta información as comunidades afectadas por macro proxectos eólicos?</h2>
+                <ol>
+                    <li>Para coñecer a Natura2000 amenazada por infraestructuras eólicas no teu concello.</li>
+                    <li>Para insertar estes datos nas alegacións pertienentes.</li>
+                    <li>Para presentar una denuncia á EU. (Parlamento ou comisón)</li>
+                </li></ol>
+        
+        
+                <h2>BUSCA O TEU CONCELLO</h2>
+
+
+            <ul>
+                {% for n in tlista_concellos %}
+                <li><a href="concellos/{{n}}.html">{{n}}</a></li>
+                {% endfor %}            
+            </ul>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
