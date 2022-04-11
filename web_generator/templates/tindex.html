@@ -1,52 +1,378 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <title>Index de concellos</title>
-</head>
-<body>
-    <div class=”container”>
-        <div class=”row”>
-            <div class=”col-md-12">
+{% extends "layout.html" %}
+{% block content %}
+ 
 
+            <h2>Listaxe de hábitats NATURA 2000</h2>
 
-                <h1>Listaxe de hábitats NATURA 2000</h1>
-
-                <h2>Que é isto da Listaxe Hábitats Natura2000?</h2>
-                <p>É unha listaxe dos hábitats do Plan Director RN2000 de Galicia que están afectados ou amenazados por
-                infraestruturas eólicas. Podes atopar a información por concellos.</p>
-        
-                <ul>
-                    <li>23.242 hábitats #Natura2000 de Galicia dentro de poligonais industriais.</li>
-                    <li>5.322 hábitats #Natura2000 de Galicia con aeroxeradores dentro.</li>
-                    <li>1.823 parcelas de hábitats #Natura2000 de Galicia afectadas por liñas de Alta Tensión.</li></ul>
-                <h2>Qué son os hábitats da Natura2000 e por qué son tan importantes?</h2>
-                <p>Porque os habitats están protexidos pola Directiva 92/43/CEE, relativa a la Conservación de Hábitats
-                Naturales y de la Fauna y Flora Silvestre. Art 2 y 6.</p>
-                <h2>Para qué podemos usar esta información as comunidades afectadas por macro proxectos eólicos?</h2>
-                <ol>
-                    <li>Para coñecer a Natura2000 amenazada por infraestructuras eólicas no teu concello.</li>
-                    <li>Para insertar estes datos nas alegacións pertienentes.</li>
-                    <li>Para presentar una denuncia á EU. (Parlamento ou comisón)</li>
-                </li></ol>
-        
-        
-                <h2>BUSCA O TEU CONCELLO</h2>
-
-
+            <h3>Que é isto da Listaxe Hábitats Natura2000?</h3>
+            <p>É unha listaxe das teselas con hábitats protexidos pola rede Natura2000, incluídos no “Plan Director RN2000 de Galicia”, que están afectados ou ameazados por infraestruturas eólicas. Podes atopar a información por concellos.</p>
+    
             <ul>
-                {% for n in tlista_concellos %}
-                <li><a href="concellos/{{n}}.html">{{n}}</a></li>
-                {% endfor %}            
-            </ul>
+                <li>23.242 teselas con hábitats #Natura2000 de Galicia dentro de poligonais industriais. 5.846 de ellos hábitats prioritarios.</li>
+                <li>5.322 teselas con hábitats #Natura2000 de Galicia con aerogeneradores dentro. 910 de ellos hábitats prioritarios.</li>
+                <li>1.823 teselas con hábitats #Natura2000 de Galicia afectadas por liñas de Alta Tensión. 374 de ellos hábitats prioritarios.</li></ul>
+            <h3>Que é a rede Natura2000 e por que é tan importante?</h3>
+            <p>É unha rede de espazos naturais protexidos pola Unión Europea. Son ecosistemas que conteñen especies fundamemtais para á vida e a conservación da biodiversidade, e que son usados polas as aves migratorias. Os hábitats  que hai nas teselas, son áreas protexidas polas sus caracarterísticas naturais, pola Directiva 92/43/CEE, relativa á conservación de Hábitats Naturais e da Fauna e Flora Silvestre. Art 2 e 6.</p>
+            <h3>Para qué podemos usar esta información as comunidades afectadas por macro proxectos eólicos?</h3>
+            <ol>
+                <li>Para coñecer a Natura2000 amenazada por infraestructuras eólicas no teu concello.</li>
+                <li>Para insertar estes datos nas alegacións pertienentes.</li>
+                <li>Para ⏩ presentar una denuncia á EU. (Parlamento ou comisón)</li>
+            </li></ol>
+    
+            <h3>Por que é denunciable?</h3>
+            <ol>
+                <li>Porque vulnera a normativa europea: Directiva 92/43/CEE, relativa a la Conservación de Hábitats Naturales y de la Fauna y Flora Silvestre.</li>
+                <li>Porque vulnera a normativa Galega: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2010-1708">Ley Eólica de Galicia (art. 32 de la Ley 8/2009)</a>.</li>
+                <li>Porque omite as recomendacións de Zonificación Ambiental para a implantación de enerxías renovables do Ministerio de Transición ecolóxica <a href="https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/evaluacion-ambiental/documento1memoria_tcm30-518028.pdf">pax 46. Resumen de indicadores</a>).</li>
+            </li></ol>
+    
+            <h3>Busca o teu concello</h3>
+            
 
-            </div>
-        </div>
-    </div>
+            <style>
+              * {
+                box-sizing: border-box;
+              }
+              
+              
+              /*the container must be positioned relative:*/
+              .autocomplete {
+                position: relative;
+                display: inline-block;
+              }
+              
+              input {
+                border: 1px solid transparent;
+                background-color: #f1f1f1;
+                padding: 10px;
+                font-size: 16px;
+              }
+              
+              input[type=text] {
+                background-color: #f1f1f1;
+                width: 100%;
+              }
+              
+              input[type=submit] {
+                background-color: DodgerBlue;
+                color: #fff;
+                cursor: pointer;
+              }
+              
+              .autocomplete-items {
+                position: absolute;
+                border: 1px solid #d4d4d4;
+                border-bottom: none;
+                border-top: none;
+                z-index: 99;
+                /*position the autocomplete items to be the same width as the container:*/
+                top: 100%;
+                left: 0;
+                right: 0;
+              }
+              
+              .autocomplete-items div {
+                padding: 10px;
+                cursor: pointer;
+                background-color: #fff; 
+                border-bottom: 1px solid #d4d4d4; 
+              }
+              
+              /*when hovering an item:*/
+              .autocomplete-items div:hover {
+                background-color: #e9e9e9; 
+              }
+              
+              /*when navigating through the items using the arrow keys:*/
+              .autocomplete-active {
+                background-color: DodgerBlue !important; 
+                color: #ffffff; 
+              }
+              </style>
 
-</body>
-</html>
+
+            <!--Make sure the form has the autocomplete function switched off:-->
+            <form id="formulario" autocomplete="off" action="/concellos/" method="post">
+              <div class="autocomplete" style="width:300px;">
+                <input id="myInput" type="text" name="concello" placeholder="Concello">
+              </div>        
+              <button class="btn btn-primary" onclick="changeFormAction()" type="submit">Ver o teu concello</button>
+            </form>
+
+            <script>
+            function changeFormAction() {              
+              document.getElementById('formulario').action='./concellos/'.concat(document.getElementById('myInput').value).concat('.html');
+              document.getElementById('formulario').reset()
+              document.getElementById('formulario').submit();
+            }
+            </script>
+
+            
+            <script>
+            function autocomplete(inp, arr) {
+              /*the autocomplete function takes two arguments,
+              the text field element and an array of possible autocompleted values:*/
+              var currentFocus;
+              /*execute a function when someone writes in the text field:*/
+              inp.addEventListener("input", function(e) {
+                  var a, b, i, val = this.value;
+                  /*close any already open lists of autocompleted values*/
+                  closeAllLists();
+                  if (!val) { return false;}
+                  currentFocus = -1;
+                  /*create a DIV element that will contain the items (values):*/
+                  a = document.createElement("DIV");
+                  a.setAttribute("id", this.id + "autocomplete-list");
+                  a.setAttribute("class", "autocomplete-items");
+                  /*append the DIV element as a child of the autocomplete container:*/
+                  this.parentNode.appendChild(a);
+                  /*for each item in the array...*/
+                  for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                      /*create a DIV element for each matching element:*/
+                      b = document.createElement("DIV");
+                      /*make the matching letters bold:*/
+                      b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                      b.innerHTML += arr[i].substr(val.length);
+                      /*insert a input field that will hold the current array item's value:*/
+                      b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                      /*execute a function when someone clicks on the item value (DIV element):*/
+                      b.addEventListener("click", function(e) {
+                          /*insert the value for the autocomplete text field:*/
+                          inp.value = this.getElementsByTagName("input")[0].value;
+                          /*close the list of autocompleted values,
+                          (or any other open lists of autocompleted values:*/
+                          closeAllLists();
+                      });
+                      a.appendChild(b);
+                    }
+                  }
+              });
+              /*execute a function presses a key on the keyboard:*/
+              inp.addEventListener("keydown", function(e) {
+                  var x = document.getElementById(this.id + "autocomplete-list");
+                  if (x) x = x.getElementsByTagName("div");
+                  if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                  } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                  } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                      /*and simulate a click on the "active" item:*/
+                      if (x) x[currentFocus].click();
+                    }
+                  }
+              });
+              function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+              }
+              function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                  x[i].classList.remove("autocomplete-active");
+                }
+              }
+              function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                  if (elmnt != x[i] && elmnt != inp) {
+                    x[i].parentNode.removeChild(x[i]);
+                  }
+                }
+              }
+              /*execute a function when someone clicks in the document:*/
+              document.addEventListener("click", function (e) {
+                  closeAllLists(e.target);
+              });
+            }
+            
+            /*An array containing all the country names in the world:*/
+            var countries = ['Abadín',
+ 'Alfoz',
+ 'Baleira',
+ 'Bande',
+ 'Baralla',
+ 'Beariz',
+ 'Becerreá',
+ 'Boborás',
+ 'Cabanas',
+ 'Camariñas',
+ 'Capela, A',
+ 'Carballeda de Valdeorras',
+ 'Carballedo',
+ 'Cariño',
+ 'Carnota',
+ 'Cedeira',
+ 'Cee',
+ 'Cerdedo-Cotobade',
+ 'Cerdido',
+ 'Cervo',
+ 'Chandrexa de Queixa',
+ 'Chantada',
+ 'Dumbría',
+ 'Estrada, A',
+ 'Fene',
+ 'Ferrol',
+ 'Folgoso do Courel',
+ 'Fonsagrada, A',
+ 'Forcarei',
+ 'Frades',
+ 'Friol',
+ 'Guitiriz',
+ 'Incio, O',
+ 'Irixo, O',
+ 'Irixoa',
+ 'Lalín',
+ 'Lama, A',
+ 'Laxe',
+ 'Laza',
+ 'Malpica de Bergantiños',
+ 'Mañón',
+ 'Mazaricos',
+ 'Melide',
+ 'Mesía',
+ 'Mondoñedo',
+ 'Monfero',
+ 'Montederramo',
+ 'Muras',
+ 'Muros',
+ 'Muxía',
+ 'Narón',
+ 'Negueira de Muñiz',
+ 'Nogais, As',
+ 'Ortigueira',
+ 'Ourol',
+ 'Palas de Rei',
+ 'Pedrafita do Cebreiro',
+ 'Pobra do Brollón, A',
+ 'Ponte Caldelas',
+ 'Ponteceso',
+ 'Pontedeume',
+ 'Pontenova, A',
+ 'Pontes de García Rodríguez, As',
+ 'Porto do Son',
+ 'Ribeira de Piquín',
+ 'Rodeiro',
+ 'Samos',
+ 'San Sadurniño',
+ 'Silleda',
+ 'Sobrado',
+ 'Somozas, As',
+ 'Toques',
+ 'Triacastela',
+ 'Valadouro, O',
+ 'Valdoviño',
+ 'Veiga, A',
+ 'Verea',
+ 'Vicedo, O',
+ 'Vilalba',
+ 'Vilar de Barrio',
+ 'Vimianzo',
+ 'Viveiro',
+ 'Xermade',
+ 'Xove',
+ 'Abegondo',
+ 'Ames',
+ 'Aranga',
+ 'Arteixo',
+ 'Barreiros',
+ 'Betanzos',
+ 'Brión',
+ 'Capela',
+ 'Carballo',
+ 'Castro de Rei',
+ 'Coirós',
+ 'Coristanco',
+ 'Estrada',
+ 'Fonsagrada',
+ 'Foz',
+ 'Laracha',
+ 'Lourenzá',
+ 'Negreira',
+ 'Noia',
+ 'Ordes',
+ 'Outes',
+ 'Oza-Cesuras',
+ 'Paderne',
+ 'Pastoriza',
+ 'Pobra do Brollón',
+ 'Pontes de García Rodríguez',
+ 'Quiroga',
+ 'Rois',
+ 'Santiago de Compostela',
+ 'Somozas',
+ 'Valadouro',
+ 'Vila de Cruces',
+ 'Vilarmaior',
+ 'Agolada',
+ 'Baltar',
+ 'Cabana de Bergantiños',
+ 'Calvos de Randín',
+ 'Cañiza, A',
+ 'Castrelo do Val',
+ 'Catoira',
+ 'Cervantes',
+ 'Cospeito',
+ 'Covelo',
+ 'Crecente',
+ 'Cuntis',
+ 'Fornelos de Montes',
+ 'Laracha, A',
+ 'Lousame',
+ 'Moeche',
+ 'Mondariz',
+ 'Neda',
+ 'Neves, As',
+ 'Nogueira de Ramuín',
+ 'Oroso',
+ 'Padrón',
+ 'Parada de Sil',
+ 'Pino, O',
+ 'Pobra de Trives, A',
+ 'Pol',
+ 'Pontecesures',
+ 'Ribeira',
+ 'San Xoán de Río',
+ 'Teo',
+ 'Tordoia',
+ 'Trabada',
+ 'Trazo',
+ 'Vilariño de Conso'];
+            
+            /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+            autocomplete(document.getElementById("myInput"), countries);
+            </script>
+            
+
+            <br>
+            <h3>Como se fixo esta listaxe??</h3>
+            <p>Trátase dun cálculo GIS cruzando a capa INDUSTRIAL do grupo de mapas #MonferoDiNon (que recolle centos de EIAS e Documentos de Inicio das promotoras, con infraestruturas eólicas proxectadas até o 28 Marzo do 2022) cos DATOS PÚBLICOS de Natura2000. 
+                (<a href="http://visorgis.cmati.xunta.es/cdix/descargas/conservacion/Habitats_anexoI_PD_RNat2000.zip">arquivo Hábitats_anexoI_PD_RNat2000.zip)</a>.</p>
+                
+                <p>⏬ Descarga as listaxes de toda Galicia (+ <a href="https://mapaseolicos.files.wordpress.com/2022/03/lenda.pdf">lenda</a>)</p>
+                <p>⏬ descarga o <a href="https://drive.google.com/file/d/1REu9a7Bx_mHxsFETL1EHIKW1BXEHrRew/view?usp=sharing">arquivo .geopackage do análisis</a></p>
+    
+
+
+{% endblock %}

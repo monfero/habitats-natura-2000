@@ -1,352 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <title>Index de concellos</title>
-</head>
-<body>
-    <div class=”container”>
-        <div class=”row”>
-            <div class=”col-md-12">
+<html>
+  <head>
+    <title>Natura2000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-                <h1>Listaxe de hábitats NATURA 2000</h1>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/starter-template/">
 
-                <h2>Que é isto da Listaxe Hábitats Natura2000?</h2>
-                <p>É unha listaxe dos hábitats do Plan Director RN2000 de Galicia que están afectados ou amenazados por
-                infraestruturas eólicas. Podes atopar a información por concellos.</p>
+    
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href= "starter-template.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+
+  <body>
+
+
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+          <span class="fs-4">Hábitats Natura2000</span>
+        </a>
+      </header>
+
+
+
+      <main>
+     
+    
         
-                <ul>
-                    <li>23.242 hábitats #Natura2000 de Galicia dentro de poligonais industriais.</li>
-                    <li>5.322 hábitats #Natura2000 de Galicia con aeroxeradores dentro.</li>
-                    <li>1.823 parcelas de hábitats #Natura2000 de Galicia afectadas por liñas de Alta Tensión.</li></ul>
-                <h2>Qué son os hábitats da Natura2000 e por qué son tan importantes?</h2>
-                <p>Porque os habitats están protexidos pola Directiva 92/43/CEE, relativa a la Conservación de Hábitats
-                Naturales y de la Fauna y Flora Silvestre. Art 2 y 6.</p>
-                <h2>Para qué podemos usar esta información as comunidades afectadas por macro proxectos eólicos?</h2>
-                <ol>
-                    <li>Para coñecer a Natura2000 amenazada por infraestructuras eólicas no teu concello.</li>
-                    <li>Para insertar estes datos nas alegacións pertienentes.</li>
-                    <li>Para presentar una denuncia á EU. (Parlamento ou comisón)</li>
-                </li></ol>
-        
-        
-                <h2>BUSCA O TEU CONCELLO</h2>
+ 
 
+            <h2>Listaxe de hábitats NATURA 2000</h2>
 
+            <h3>Que é isto da Listaxe Hábitats Natura2000?</h3>
+            <p>É unha listaxe das teselas con hábitats protexidos pola rede Natura2000, incluídos no “Plan Director RN2000 de Galicia”, que están afectados ou ameazados por infraestruturas eólicas. Podes atopar a información por concellos.</p>
+    
             <ul>
-                
-                <li><a href="concellos/Abadín.html">Abadín</a></li>
-                
-                <li><a href="concellos/Alfoz.html">Alfoz</a></li>
-                
-                <li><a href="concellos/Baleira.html">Baleira</a></li>
-                
-                <li><a href="concellos/Bande.html">Bande</a></li>
-                
-                <li><a href="concellos/Baralla.html">Baralla</a></li>
-                
-                <li><a href="concellos/Beariz.html">Beariz</a></li>
-                
-                <li><a href="concellos/Becerreá.html">Becerreá</a></li>
-                
-                <li><a href="concellos/Boborás.html">Boborás</a></li>
-                
-                <li><a href="concellos/Cabanas.html">Cabanas</a></li>
-                
-                <li><a href="concellos/Camariñas.html">Camariñas</a></li>
-                
-                <li><a href="concellos/Capela, A.html">Capela, A</a></li>
-                
-                <li><a href="concellos/Carballeda de Valdeorras.html">Carballeda de Valdeorras</a></li>
-                
-                <li><a href="concellos/Carballedo.html">Carballedo</a></li>
-                
-                <li><a href="concellos/Cariño.html">Cariño</a></li>
-                
-                <li><a href="concellos/Carnota.html">Carnota</a></li>
-                
-                <li><a href="concellos/Cedeira.html">Cedeira</a></li>
-                
-                <li><a href="concellos/Cee.html">Cee</a></li>
-                
-                <li><a href="concellos/Cerdedo-Cotobade.html">Cerdedo-Cotobade</a></li>
-                
-                <li><a href="concellos/Cerdido.html">Cerdido</a></li>
-                
-                <li><a href="concellos/Cervo.html">Cervo</a></li>
-                
-                <li><a href="concellos/Chandrexa de Queixa.html">Chandrexa de Queixa</a></li>
-                
-                <li><a href="concellos/Chantada.html">Chantada</a></li>
-                
-                <li><a href="concellos/Dumbría.html">Dumbría</a></li>
-                
-                <li><a href="concellos/Estrada, A.html">Estrada, A</a></li>
-                
-                <li><a href="concellos/Fene.html">Fene</a></li>
-                
-                <li><a href="concellos/Ferrol.html">Ferrol</a></li>
-                
-                <li><a href="concellos/Folgoso do Courel.html">Folgoso do Courel</a></li>
-                
-                <li><a href="concellos/Fonsagrada, A.html">Fonsagrada, A</a></li>
-                
-                <li><a href="concellos/Forcarei.html">Forcarei</a></li>
-                
-                <li><a href="concellos/Frades.html">Frades</a></li>
-                
-                <li><a href="concellos/Friol.html">Friol</a></li>
-                
-                <li><a href="concellos/Guitiriz.html">Guitiriz</a></li>
-                
-                <li><a href="concellos/Incio, O.html">Incio, O</a></li>
-                
-                <li><a href="concellos/Irixo, O.html">Irixo, O</a></li>
-                
-                <li><a href="concellos/Irixoa.html">Irixoa</a></li>
-                
-                <li><a href="concellos/Lalín.html">Lalín</a></li>
-                
-                <li><a href="concellos/Lama, A.html">Lama, A</a></li>
-                
-                <li><a href="concellos/Laxe.html">Laxe</a></li>
-                
-                <li><a href="concellos/Laza.html">Laza</a></li>
-                
-                <li><a href="concellos/Malpica de Bergantiños.html">Malpica de Bergantiños</a></li>
-                
-                <li><a href="concellos/Mañón.html">Mañón</a></li>
-                
-                <li><a href="concellos/Mazaricos.html">Mazaricos</a></li>
-                
-                <li><a href="concellos/Melide.html">Melide</a></li>
-                
-                <li><a href="concellos/Mesía.html">Mesía</a></li>
-                
-                <li><a href="concellos/Mondoñedo.html">Mondoñedo</a></li>
-                
-                <li><a href="concellos/Monfero.html">Monfero</a></li>
-                
-                <li><a href="concellos/Montederramo.html">Montederramo</a></li>
-                
-                <li><a href="concellos/Muras.html">Muras</a></li>
-                
-                <li><a href="concellos/Muros.html">Muros</a></li>
-                
-                <li><a href="concellos/Muxía.html">Muxía</a></li>
-                
-                <li><a href="concellos/Narón.html">Narón</a></li>
-                
-                <li><a href="concellos/Negueira de Muñiz.html">Negueira de Muñiz</a></li>
-                
-                <li><a href="concellos/Nogais, As.html">Nogais, As</a></li>
-                
-                <li><a href="concellos/Ortigueira.html">Ortigueira</a></li>
-                
-                <li><a href="concellos/Ourol.html">Ourol</a></li>
-                
-                <li><a href="concellos/Palas de Rei.html">Palas de Rei</a></li>
-                
-                <li><a href="concellos/Pedrafita do Cebreiro.html">Pedrafita do Cebreiro</a></li>
-                
-                <li><a href="concellos/Pobra do Brollón, A.html">Pobra do Brollón, A</a></li>
-                
-                <li><a href="concellos/Ponte Caldelas.html">Ponte Caldelas</a></li>
-                
-                <li><a href="concellos/Ponteceso.html">Ponteceso</a></li>
-                
-                <li><a href="concellos/Pontedeume.html">Pontedeume</a></li>
-                
-                <li><a href="concellos/Pontenova, A.html">Pontenova, A</a></li>
-                
-                <li><a href="concellos/Pontes de García Rodríguez, As.html">Pontes de García Rodríguez, As</a></li>
-                
-                <li><a href="concellos/Porto do Son.html">Porto do Son</a></li>
-                
-                <li><a href="concellos/Ribeira de Piquín.html">Ribeira de Piquín</a></li>
-                
-                <li><a href="concellos/Rodeiro.html">Rodeiro</a></li>
-                
-                <li><a href="concellos/Samos.html">Samos</a></li>
-                
-                <li><a href="concellos/San Sadurniño.html">San Sadurniño</a></li>
-                
-                <li><a href="concellos/Silleda.html">Silleda</a></li>
-                
-                <li><a href="concellos/Sobrado.html">Sobrado</a></li>
-                
-                <li><a href="concellos/Somozas, As.html">Somozas, As</a></li>
-                
-                <li><a href="concellos/Toques.html">Toques</a></li>
-                
-                <li><a href="concellos/Triacastela.html">Triacastela</a></li>
-                
-                <li><a href="concellos/Valadouro, O.html">Valadouro, O</a></li>
-                
-                <li><a href="concellos/Valdoviño.html">Valdoviño</a></li>
-                
-                <li><a href="concellos/Veiga, A.html">Veiga, A</a></li>
-                
-                <li><a href="concellos/Verea.html">Verea</a></li>
-                
-                <li><a href="concellos/Vicedo, O.html">Vicedo, O</a></li>
-                
-                <li><a href="concellos/Vilalba.html">Vilalba</a></li>
-                
-                <li><a href="concellos/Vilar de Barrio.html">Vilar de Barrio</a></li>
-                
-                <li><a href="concellos/Vimianzo.html">Vimianzo</a></li>
-                
-                <li><a href="concellos/Viveiro.html">Viveiro</a></li>
-                
-                <li><a href="concellos/Xermade.html">Xermade</a></li>
-                
-                <li><a href="concellos/Xove.html">Xove</a></li>
-                
-                <li><a href="concellos/Abegondo.html">Abegondo</a></li>
-                
-                <li><a href="concellos/Ames.html">Ames</a></li>
-                
-                <li><a href="concellos/Aranga.html">Aranga</a></li>
-                
-                <li><a href="concellos/Arteixo.html">Arteixo</a></li>
-                
-                <li><a href="concellos/Barreiros.html">Barreiros</a></li>
-                
-                <li><a href="concellos/Betanzos.html">Betanzos</a></li>
-                
-                <li><a href="concellos/Brión.html">Brión</a></li>
-                
-                <li><a href="concellos/Capela.html">Capela</a></li>
-                
-                <li><a href="concellos/Carballo.html">Carballo</a></li>
-                
-                <li><a href="concellos/Castro de Rei.html">Castro de Rei</a></li>
-                
-                <li><a href="concellos/Coirós.html">Coirós</a></li>
-                
-                <li><a href="concellos/Coristanco.html">Coristanco</a></li>
-                
-                <li><a href="concellos/Estrada.html">Estrada</a></li>
-                
-                <li><a href="concellos/Fonsagrada.html">Fonsagrada</a></li>
-                
-                <li><a href="concellos/Foz.html">Foz</a></li>
-                
-                <li><a href="concellos/Laracha.html">Laracha</a></li>
-                
-                <li><a href="concellos/Lourenzá.html">Lourenzá</a></li>
-                
-                <li><a href="concellos/Negreira.html">Negreira</a></li>
-                
-                <li><a href="concellos/Noia.html">Noia</a></li>
-                
-                <li><a href="concellos/Ordes.html">Ordes</a></li>
-                
-                <li><a href="concellos/Outes.html">Outes</a></li>
-                
-                <li><a href="concellos/Oza-Cesuras.html">Oza-Cesuras</a></li>
-                
-                <li><a href="concellos/Paderne.html">Paderne</a></li>
-                
-                <li><a href="concellos/Pastoriza.html">Pastoriza</a></li>
-                
-                <li><a href="concellos/Pobra do Brollón.html">Pobra do Brollón</a></li>
-                
-                <li><a href="concellos/Pontes de García Rodríguez.html">Pontes de García Rodríguez</a></li>
-                
-                <li><a href="concellos/Quiroga.html">Quiroga</a></li>
-                
-                <li><a href="concellos/Rois.html">Rois</a></li>
-                
-                <li><a href="concellos/Santiago de Compostela.html">Santiago de Compostela</a></li>
-                
-                <li><a href="concellos/Somozas.html">Somozas</a></li>
-                
-                <li><a href="concellos/Valadouro.html">Valadouro</a></li>
-                
-                <li><a href="concellos/Vila de Cruces.html">Vila de Cruces</a></li>
-                
-                <li><a href="concellos/Vilarmaior.html">Vilarmaior</a></li>
-                
-                <li><a href="concellos/Agolada.html">Agolada</a></li>
-                
-                <li><a href="concellos/Baltar.html">Baltar</a></li>
-                
-                <li><a href="concellos/Cabana de Bergantiños.html">Cabana de Bergantiños</a></li>
-                
-                <li><a href="concellos/Calvos de Randín.html">Calvos de Randín</a></li>
-                
-                <li><a href="concellos/Cañiza, A.html">Cañiza, A</a></li>
-                
-                <li><a href="concellos/Castrelo do Val.html">Castrelo do Val</a></li>
-                
-                <li><a href="concellos/Catoira.html">Catoira</a></li>
-                
-                <li><a href="concellos/Cervantes.html">Cervantes</a></li>
-                
-                <li><a href="concellos/Cospeito.html">Cospeito</a></li>
-                
-                <li><a href="concellos/Covelo.html">Covelo</a></li>
-                
-                <li><a href="concellos/Crecente.html">Crecente</a></li>
-                
-                <li><a href="concellos/Cuntis.html">Cuntis</a></li>
-                
-                <li><a href="concellos/Fornelos de Montes.html">Fornelos de Montes</a></li>
-                
-                <li><a href="concellos/Laracha, A.html">Laracha, A</a></li>
-                
-                <li><a href="concellos/Lousame.html">Lousame</a></li>
-                
-                <li><a href="concellos/Moeche.html">Moeche</a></li>
-                
-                <li><a href="concellos/Mondariz.html">Mondariz</a></li>
-                
-                <li><a href="concellos/Neda.html">Neda</a></li>
-                
-                <li><a href="concellos/Neves, As.html">Neves, As</a></li>
-                
-                <li><a href="concellos/Nogueira de Ramuín.html">Nogueira de Ramuín</a></li>
-                
-                <li><a href="concellos/Oroso.html">Oroso</a></li>
-                
-                <li><a href="concellos/Padrón.html">Padrón</a></li>
-                
-                <li><a href="concellos/Parada de Sil.html">Parada de Sil</a></li>
-                
-                <li><a href="concellos/Pino, O.html">Pino, O</a></li>
-                
-                <li><a href="concellos/Pobra de Trives, A.html">Pobra de Trives, A</a></li>
-                
-                <li><a href="concellos/Pol.html">Pol</a></li>
-                
-                <li><a href="concellos/Pontecesures.html">Pontecesures</a></li>
-                
-                <li><a href="concellos/Ribeira.html">Ribeira</a></li>
-                
-                <li><a href="concellos/San Xoán de Río.html">San Xoán de Río</a></li>
-                
-                <li><a href="concellos/Teo.html">Teo</a></li>
-                
-                <li><a href="concellos/Tordoia.html">Tordoia</a></li>
-                
-                <li><a href="concellos/Trabada.html">Trabada</a></li>
-                
-                <li><a href="concellos/Trazo.html">Trazo</a></li>
-                
-                <li><a href="concellos/Vilariño de Conso.html">Vilariño de Conso</a></li>
-                            
-            </ul>
+                <li>23.242 teselas con hábitats #Natura2000 de Galicia dentro de poligonais industriais. 5.846 de ellos hábitats prioritarios.</li>
+                <li>5.322 teselas con hábitats #Natura2000 de Galicia con aerogeneradores dentro. 910 de ellos hábitats prioritarios.</li>
+                <li>1.823 teselas con hábitats #Natura2000 de Galicia afectadas por liñas de Alta Tensión. 374 de ellos hábitats prioritarios.</li></ul>
+            <h3>Que é a rede Natura2000 e por que é tan importante?</h3>
+            <p>É unha rede de espazos naturais protexidos pola Unión Europea. Son ecosistemas que conteñen especies fundamemtais para á vida e a conservación da biodiversidade, e que son usados polas as aves migratorias. Os hábitats  que hai nas teselas, son áreas protexidas polas sus caracarterísticas naturais, pola Directiva 92/43/CEE, relativa á conservación de Hábitats Naturais e da Fauna e Flora Silvestre. Art 2 e 6.</p>
+            <h3>Para qué podemos usar esta información as comunidades afectadas por macro proxectos eólicos?</h3>
+            <ol>
+                <li>Para coñecer a Natura2000 amenazada por infraestructuras eólicas no teu concello.</li>
+                <li>Para insertar estes datos nas alegacións pertienentes.</li>
+                <li>Para ⏩ presentar una denuncia á EU. (Parlamento ou comisón)</li>
+            </li></ol>
+    
+            <h3>Por que é denunciable?</h3>
+            <ol>
+                <li>Porque vulnera a normativa europea: Directiva 92/43/CEE, relativa a la Conservación de Hábitats Naturales y de la Fauna y Flora Silvestre.</li>
+                <li>Porque vulnera a normativa Galega: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2010-1708">Ley Eólica de Galicia (art. 32 de la Ley 8/2009)</a>.</li>
+                <li>Porque omite as recomendacións de Zonificación Ambiental para a implantación de enerxías renovables do Ministerio de Transición ecolóxica <a href="https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/evaluacion-ambiental/documento1memoria_tcm30-518028.pdf">pax 46. Resumen de indicadores</a>).</li>
+            </li></ol>
+    
+            <h3>Busca o teu concello</h3>
+            
 
-            </div>
-        </div>
+            <style>
+              * {
+                box-sizing: border-box;
+              }
+              
+              
+              /*the container must be positioned relative:*/
+              .autocomplete {
+                position: relative;
+                display: inline-block;
+              }
+              
+              input {
+                border: 1px solid transparent;
+                background-color: #f1f1f1;
+                padding: 10px;
+                font-size: 16px;
+              }
+              
+              input[type=text] {
+                background-color: #f1f1f1;
+                width: 100%;
+              }
+              
+              input[type=submit] {
+                background-color: DodgerBlue;
+                color: #fff;
+                cursor: pointer;
+              }
+              
+              .autocomplete-items {
+                position: absolute;
+                border: 1px solid #d4d4d4;
+                border-bottom: none;
+                border-top: none;
+                z-index: 99;
+                /*position the autocomplete items to be the same width as the container:*/
+                top: 100%;
+                left: 0;
+                right: 0;
+              }
+              
+              .autocomplete-items div {
+                padding: 10px;
+                cursor: pointer;
+                background-color: #fff; 
+                border-bottom: 1px solid #d4d4d4; 
+              }
+              
+              /*when hovering an item:*/
+              .autocomplete-items div:hover {
+                background-color: #e9e9e9; 
+              }
+              
+              /*when navigating through the items using the arrow keys:*/
+              .autocomplete-active {
+                background-color: DodgerBlue !important; 
+                color: #ffffff; 
+              }
+              </style>
+
+
+            <!--Make sure the form has the autocomplete function switched off:-->
+            <form id="formulario" autocomplete="off" action="/concellos/" method="post">
+              <div class="autocomplete" style="width:300px;">
+                <input id="myInput" type="text" name="concello" placeholder="Concello">
+              </div>        
+              <button class="btn btn-primary" onclick="changeFormAction()" type="submit">Ver o teu concello</button>
+            </form>
+
+            <script>
+            function changeFormAction() {              
+              document.getElementById('formulario').action='./concellos/'.concat(document.getElementById('myInput').value).concat('.html');
+              document.getElementById('formulario').reset()
+              document.getElementById('formulario').submit();
+            }
+            </script>
+
+            
+            <script>
+            function autocomplete(inp, arr) {
+              /*the autocomplete function takes two arguments,
+              the text field element and an array of possible autocompleted values:*/
+              var currentFocus;
+              /*execute a function when someone writes in the text field:*/
+              inp.addEventListener("input", function(e) {
+                  var a, b, i, val = this.value;
+                  /*close any already open lists of autocompleted values*/
+                  closeAllLists();
+                  if (!val) { return false;}
+                  currentFocus = -1;
+                  /*create a DIV element that will contain the items (values):*/
+                  a = document.createElement("DIV");
+                  a.setAttribute("id", this.id + "autocomplete-list");
+                  a.setAttribute("class", "autocomplete-items");
+                  /*append the DIV element as a child of the autocomplete container:*/
+                  this.parentNode.appendChild(a);
+                  /*for each item in the array...*/
+                  for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                      /*create a DIV element for each matching element:*/
+                      b = document.createElement("DIV");
+                      /*make the matching letters bold:*/
+                      b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                      b.innerHTML += arr[i].substr(val.length);
+                      /*insert a input field that will hold the current array item's value:*/
+                      b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                      /*execute a function when someone clicks on the item value (DIV element):*/
+                      b.addEventListener("click", function(e) {
+                          /*insert the value for the autocomplete text field:*/
+                          inp.value = this.getElementsByTagName("input")[0].value;
+                          /*close the list of autocompleted values,
+                          (or any other open lists of autocompleted values:*/
+                          closeAllLists();
+                      });
+                      a.appendChild(b);
+                    }
+                  }
+              });
+              /*execute a function presses a key on the keyboard:*/
+              inp.addEventListener("keydown", function(e) {
+                  var x = document.getElementById(this.id + "autocomplete-list");
+                  if (x) x = x.getElementsByTagName("div");
+                  if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                  } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                  } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                      /*and simulate a click on the "active" item:*/
+                      if (x) x[currentFocus].click();
+                    }
+                  }
+              });
+              function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+              }
+              function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                  x[i].classList.remove("autocomplete-active");
+                }
+              }
+              function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                  if (elmnt != x[i] && elmnt != inp) {
+                    x[i].parentNode.removeChild(x[i]);
+                  }
+                }
+              }
+              /*execute a function when someone clicks in the document:*/
+              document.addEventListener("click", function (e) {
+                  closeAllLists(e.target);
+              });
+            }
+            
+            /*An array containing all the country names in the world:*/
+            var countries = ['Abadín',
+ 'Alfoz',
+ 'Baleira',
+ 'Bande',
+ 'Baralla',
+ 'Beariz',
+ 'Becerreá',
+ 'Boborás',
+ 'Cabanas',
+ 'Camariñas',
+ 'Capela, A',
+ 'Carballeda de Valdeorras',
+ 'Carballedo',
+ 'Cariño',
+ 'Carnota',
+ 'Cedeira',
+ 'Cee',
+ 'Cerdedo-Cotobade',
+ 'Cerdido',
+ 'Cervo',
+ 'Chandrexa de Queixa',
+ 'Chantada',
+ 'Dumbría',
+ 'Estrada, A',
+ 'Fene',
+ 'Ferrol',
+ 'Folgoso do Courel',
+ 'Fonsagrada, A',
+ 'Forcarei',
+ 'Frades',
+ 'Friol',
+ 'Guitiriz',
+ 'Incio, O',
+ 'Irixo, O',
+ 'Irixoa',
+ 'Lalín',
+ 'Lama, A',
+ 'Laxe',
+ 'Laza',
+ 'Malpica de Bergantiños',
+ 'Mañón',
+ 'Mazaricos',
+ 'Melide',
+ 'Mesía',
+ 'Mondoñedo',
+ 'Monfero',
+ 'Montederramo',
+ 'Muras',
+ 'Muros',
+ 'Muxía',
+ 'Narón',
+ 'Negueira de Muñiz',
+ 'Nogais, As',
+ 'Ortigueira',
+ 'Ourol',
+ 'Palas de Rei',
+ 'Pedrafita do Cebreiro',
+ 'Pobra do Brollón, A',
+ 'Ponte Caldelas',
+ 'Ponteceso',
+ 'Pontedeume',
+ 'Pontenova, A',
+ 'Pontes de García Rodríguez, As',
+ 'Porto do Son',
+ 'Ribeira de Piquín',
+ 'Rodeiro',
+ 'Samos',
+ 'San Sadurniño',
+ 'Silleda',
+ 'Sobrado',
+ 'Somozas, As',
+ 'Toques',
+ 'Triacastela',
+ 'Valadouro, O',
+ 'Valdoviño',
+ 'Veiga, A',
+ 'Verea',
+ 'Vicedo, O',
+ 'Vilalba',
+ 'Vilar de Barrio',
+ 'Vimianzo',
+ 'Viveiro',
+ 'Xermade',
+ 'Xove',
+ 'Abegondo',
+ 'Ames',
+ 'Aranga',
+ 'Arteixo',
+ 'Barreiros',
+ 'Betanzos',
+ 'Brión',
+ 'Capela',
+ 'Carballo',
+ 'Castro de Rei',
+ 'Coirós',
+ 'Coristanco',
+ 'Estrada',
+ 'Fonsagrada',
+ 'Foz',
+ 'Laracha',
+ 'Lourenzá',
+ 'Negreira',
+ 'Noia',
+ 'Ordes',
+ 'Outes',
+ 'Oza-Cesuras',
+ 'Paderne',
+ 'Pastoriza',
+ 'Pobra do Brollón',
+ 'Pontes de García Rodríguez',
+ 'Quiroga',
+ 'Rois',
+ 'Santiago de Compostela',
+ 'Somozas',
+ 'Valadouro',
+ 'Vila de Cruces',
+ 'Vilarmaior',
+ 'Agolada',
+ 'Baltar',
+ 'Cabana de Bergantiños',
+ 'Calvos de Randín',
+ 'Cañiza, A',
+ 'Castrelo do Val',
+ 'Catoira',
+ 'Cervantes',
+ 'Cospeito',
+ 'Covelo',
+ 'Crecente',
+ 'Cuntis',
+ 'Fornelos de Montes',
+ 'Laracha, A',
+ 'Lousame',
+ 'Moeche',
+ 'Mondariz',
+ 'Neda',
+ 'Neves, As',
+ 'Nogueira de Ramuín',
+ 'Oroso',
+ 'Padrón',
+ 'Parada de Sil',
+ 'Pino, O',
+ 'Pobra de Trives, A',
+ 'Pol',
+ 'Pontecesures',
+ 'Ribeira',
+ 'San Xoán de Río',
+ 'Teo',
+ 'Tordoia',
+ 'Trabada',
+ 'Trazo',
+ 'Vilariño de Conso'];
+            
+            /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+            autocomplete(document.getElementById("myInput"), countries);
+            </script>
+            
+
+            <br>
+            <h3>Como se fixo esta listaxe??</h3>
+            <p>Trátase dun cálculo GIS cruzando a capa INDUSTRIAL do grupo de mapas #MonferoDiNon (que recolle centos de EIAS e Documentos de Inicio das promotoras, con infraestruturas eólicas proxectadas até o 28 Marzo do 2022) cos DATOS PÚBLICOS de Natura2000. 
+                (<a href="http://visorgis.cmati.xunta.es/cdix/descargas/conservacion/Habitats_anexoI_PD_RNat2000.zip">arquivo Hábitats_anexoI_PD_RNat2000.zip)</a>.</p>
+                
+                <p>⏬ Descarga as listaxes de toda Galicia (+ <a href="https://mapaseolicos.files.wordpress.com/2022/03/lenda.pdf">lenda</a>)</p>
+                <p>⏬ descarga o <a href="https://drive.google.com/file/d/1REu9a7Bx_mHxsFETL1EHIKW1BXEHrRew/view?usp=sharing">arquivo .geopackage do análisis</a></p>
+    
+
+
+
+
+       
+      </main>
+      <footer class="pt-5 my-5 text-muted border-top">
+        <p>🦌🦌🦉🦉🦅🦅🦅🐝🐝🐝🐝</p>
+      <p>Colabora co grupo de mapas en <a href="https://opencollective.com/gismonferodinon">opencollective.com/gismonferodinon</a></p>
+      </footer>
     </div>
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-</body>
+      
+
+  </body>
 </html>
