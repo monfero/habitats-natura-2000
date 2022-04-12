@@ -18,9 +18,17 @@
 }
 h1 {color: darkgreen;}
 h2 {color: darkgreen;}
-h3 {color: green;}
+h3 {
+  color: green;
+  font-size: 110%;
+}
 a {color: green;}
 .btn {
   background-color: green;
   border-color: black;
+}
+header{
+  background:url('https://monfero.github.io/habitats-natura-2000/img/banner_habitats_N2000_Gal.png');
+  background-size: cover;
+  height: 200px;
 }
