@@ -95,7 +95,7 @@
               }
               
               input[type=submit] {
-                background-color: DodgerBlue;
+                background-color: rgb(175, 236, 196);
                 color: #fff;
                 cursor: pointer;
               }
@@ -126,7 +126,7 @@
               
               /*when navigating through the items using the arrow keys:*/
               .autocomplete-active {
-                background-color: DodgerBlue !important; 
+                background-color: rgb(76, 255, 5) !important; 
                 color: #ffffff; 
               }
               </style>
@@ -137,14 +137,14 @@
               <div class="autocomplete" style="width:300px;">
                 <input id="myInput" type="text" name="concello" placeholder="Concello">
               </div>        
-              <button class="btn btn-primary" onclick="changeFormAction()" type="submit">Ver o teu concello</button>
+              <!-- <button id="boton-ver" class="btn btn-primary" onclick="changeFormAction()" type="submit" disabled="disabled">Ver o teu concello</button> -->
             </form>
 
             <script>
-            function changeFormAction() {              
-              document.getElementById('formulario').action='./concellos/'.concat(document.getElementById('myInput').value).concat('.html');
-              // document.getElementById('formulario').reset()
-              document.getElementById('formulario').submit();
+            function changeFormAction() {    
+                document.getElementById('formulario').action='./concellos/'.concat(document.getElementById('myInput').value).concat('.html');
+                // document.getElementById('formulario').reset()
+                document.getElementById('formulario').submit();
             }
             </script>
 
@@ -185,6 +185,7 @@
                           /*close the list of autocompleted values,
                           (or any other open lists of autocompleted values:*/
                           closeAllLists();
+                          changeFormAction();
                       });
                       a.appendChild(b);
                     }
@@ -409,7 +410,7 @@
 <p>⏬ Descarga a <a href="https://drive.google.com/file/d/1aX-i0qBLw_wTzjBh1c_Vf3rsps2fTvNU/view?usp=sharing" target="_blank">listaxe dos 139 concellos</a> con hábitats Natura afectados</p>
 
     <h3>Que é a rede Natura2000 e por que é tan importante?</h3>
-    <p>É unha rede de espazos naturais protexidos pola Unión Europea. Son ecosistemas que conteñen especies fundamemtais para á vida e a conservación da biodiversidade, moitos deles importantes tamén por ser zonas de alimentación ou cría de aves migratorias. Os <a href="https://www.miteco.gob.es/es/biodiversidad/temas/espacios-protegidos/red-natura-2000/rn_tip_hab_esp_tipos_habitat_IC.aspx">hábitats</a>  que hai nas teselas, son áreas protexidas polas sus caracarterísticas naturais, pola Directiva 92/43/CEE, relativa á conservación de Hábitats Naturais e da Fauna e Flora Silvestre. Podes atopar toda a info relativa a vulneración de normativas en ⏩ <a href="https://mapaseolicos.wordpress.com/natura2000vseolicos/" target="_blank">presentar unha denuncia </a>.</p>
+    <p>É unha rede de espazos naturais protexidos pola Unión Europea. Son ecosistemas que conteñen especies fundamemtais para á vida e a conservación da biodiversidade, moitos deles importantes tamén por ser zonas de alimentación ou cría de aves migratorias. Os <a href="https://www.miteco.gob.es/es/biodiversidad/temas/espacios-protegidos/red-natura-2000/rn_tip_hab_esp_tipos_habitat_IC.aspx" target="_blank">hábitats</a>  que hai nas teselas, son áreas protexidas polas sus caracarterísticas naturais, pola Directiva 92/43/CEE, relativa á conservación de Hábitats Naturais e da Fauna e Flora Silvestre. Podes atopar toda a info relativa a vulneración de normativas en ⏩ <a href="https://mapaseolicos.wordpress.com/natura2000vseolicos/" target="_blank">presentar unha denuncia </a>.</p>
  
     <h3>Para qué podemos usar esta información as comunidades afectadas por macro proxectos eólicos?</h3>
     <ol>

@@ -42,7 +42,7 @@
               }
               
               input[type=submit] {
-                background-color: DodgerBlue;
+                background-color: rgb(175, 236, 196);
                 color: #fff;
                 cursor: pointer;
               }
@@ -73,7 +73,7 @@
               
               /*when navigating through the items using the arrow keys:*/
               .autocomplete-active {
-                background-color: DodgerBlue !important; 
+                background-color: rgb(76, 255, 5) !important; 
                 color: #ffffff; 
               }
               </style>
@@ -84,14 +84,14 @@
               <div class="autocomplete" style="width:300px;">
                 <input id="myInput" type="text" name="concello" placeholder="Concello">
               </div>        
-              <button class="btn btn-primary" onclick="changeFormAction()" type="submit">Ver o teu concello</button>
+              <!-- <button id="boton-ver" class="btn btn-primary" onclick="changeFormAction()" type="submit" disabled="disabled">Ver o teu concello</button> -->
             </form>
 
             <script>
-            function changeFormAction() {              
-              document.getElementById('formulario').action='./concellos/'.concat(document.getElementById('myInput').value).concat('.html');
-              // document.getElementById('formulario').reset()
-              document.getElementById('formulario').submit();
+            function changeFormAction() {    
+                document.getElementById('formulario').action='./concellos/'.concat(document.getElementById('myInput').value).concat('.html');
+                // document.getElementById('formulario').reset()
+                document.getElementById('formulario').submit();
             }
             </script>
 
@@ -132,6 +132,7 @@
                           /*close the list of autocompleted values,
                           (or any other open lists of autocompleted values:*/
                           closeAllLists();
+                          changeFormAction();
                       });
                       a.appendChild(b);
                     }
