@@ -28,9 +28,3 @@ a {color: green;}
   background-color: green;
   border-color: black;
 }
-header{
-  background:url('https://monfero.github.io/habitats-natura-2000/img/banner_habitats_N2000_Gal2.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 200px;
-}
